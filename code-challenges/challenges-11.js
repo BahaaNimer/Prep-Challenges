@@ -71,7 +71,7 @@ function fullName(arr) {
 
 // Given an array of objects use map to calculate the average of the grades 
 // and return an array of the objects with a new property called avg (that represent the average of the grades).
- 
+
 
 // Input:
 // var students = [
@@ -126,19 +126,24 @@ function fullName(arr) {
 // ]
 // -------------
 
-function gradesAvg(students) {
+function gradesAvg(arr) {
     // write your code here
-    // let avgNum;
-    // let avgc;
-    // let newArr = students.map(students => {
-    //     for (let i = 0; i < students.gradsList.length; i++) {
-    //         avgc = students.gradsList[i] / students.gradsList.length;
-    //         avgNum = parseInt(avgc[i]);
-    //         return students.avgNum;
-    //     }
-    // });
-    // students.avg = (newArr);
-    return students;
+    let arr4 = [];
+    arr.map(element => {
+        let obj = { firstName: element.firstName, lastName: element.lastName, gradsList: element.gradsList, avg: calcAvg(element.gradsList) };
+        arr4.push(obj);
+    });
+    //calac Avarg
+    function calcAvg(arr_av) {
+        let sum = 0;
+        for (let i = 0; i < arr_av.length; i++) {
+            sum = sum + arr_av[i];
+        }
+        let avg;
+        avg = sum / arr_av.length;
+        return avg;
+    }
+    return arr4;
 }
 // -------------------------------------------------------------------------------------------------------
 
