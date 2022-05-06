@@ -68,8 +68,7 @@ const stringReverse = (str) => {
     let reversed = arr.reduce((e, i) => {
         e.unshift(i);
         return e;
-    }
-        , []);
+    }, []);
     return reversed.join(' ');
 };
 // -------------------------------------------------------------------------------------------------------
